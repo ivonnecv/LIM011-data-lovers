@@ -1,57 +1,149 @@
-h1{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #ffffff;
-    margin-bottom: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
-h2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #ffffff;
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700i&display=swap');
+
+h3, h4 {
+    font-family: 'Roboto Mono', monospace; 
+    letter-spacing: 1.5px; 
+    color: ivory;
+    
+
 }
 
-h3{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #ffffff;
+.fa-facebook-f:before {
+    color: #fff;
+    font-size: 2.5em;
 }
- body{
-     background-image: url(principal.jpg);
-     background-size: 280vh;
-
   
-button {
-    width:250px;
-    height: 45px;
+.fa-instagram:before {
+    color: #fff;
+    font-size: 2.5em;
+    display: inline-flex 
+}
+
+.fa-whatsapp:before {
+    color: #fff;
+    font-size: 2.5em;
+}
+
+body {
+    background-image: url('imagenes/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    height: 100pv;
+}
+
+.sectionCeroHome {
+    display: flex;
+}
+
+.socialButton {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.socialButton h4 {
+    width: 100%;
+}
+
+
+
+.row {
+    display: flex;
+}
+
+.col-1 {
+  margin-top: 250px; 
+  width: 50%; 
+}   
+
+.infoHome {
+    text-align: center;
+    
+}
+
+.infoHome h3 {
+    text-align: center;
+    width: 100%;
+    
+}
+
+.buttonAtrapalosYa {
+    margin: 0 auto;
+    width:180px;
+    height: 30px;
     text-decoration: none;
     text-align: center;
     padding: 10px;
-    font-weight: 500;
+    font-weight: 550;
     font-size: 20px;
     color: #ffffff;
-    background-color: #ee4613;
+    background-color: #d63031;
     border-radius: 6px;
-    border: #ee4613;
-    margin: 14em;
+    border: 2px solid #d63031;
+    margin-right:;
+}
+
+
+.buttonHome {
+    /* margin-left: 130px;
+    margin-top: 5px; */
     
+}
 
-
+.download {
+ text-align: center;
+ display: flex;
+ width: 50%;
+ flex-wrap: wrap;
 
 }
 
-    //*text-decoration: none;
-    font-weight: 600;
-    font-size: 26px;
-    color: #ffffff;
-    background-color: #f50830;
-    border-radius: 6px;
+.download h4 {
+    width: 100%;
+}
+
+.buttonDownload {
+    /* display: flex; */
+    width: 100%;
+}
+
+.shareFriends {
+    display: flex;
+
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.shareFriends h4 {
+    width: 100%;
+}
+
+.socialButton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.socialButton img {
+    width: 20px;
+    height: 20px;
+}
+
+img.playStore{
+    width: 160px;
+    height: 60px;
+    margin-right;
+    margin: 0 auto;
     
-  }
-  .boton_personalizado:hover{
-    color: #yellow;
-    background-color: #00000
 
+}
 
-    
-
+img.appStore {
+    width: 170px;
+    height: 45px;
+    margin: 0 auto;
 }
