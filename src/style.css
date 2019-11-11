@@ -23,7 +23,11 @@
 }
 
 .container-home{
+<<<<<<< HEAD
+    background-image: url('background.jpg');
+=======
     background-image: url('imagenes/background1.jpg');
+>>>>>>> 4caaf15ddafa5cc78636e4cddb8b618775136fb3
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
