@@ -42,6 +42,9 @@
 .socialButton h4 {
     width: 100%;
 }
+.section-hide {
+  display: none;
+}
 
 
 .row {
@@ -170,6 +173,22 @@ img.appStore {
     height: 45px;
     margin: 0 auto;
 }
+
+/*Menu & Submenu*/
+
+.submenu {
+  display: none;
+  background: #000;
+}
+
+.submenu-label:hover + .submenu {
+  display: block;
+}
+.submenu:hover {
+  display: block;
+}
+
+
 
 
 /*Card Pokemon*/

@@ -13,14 +13,21 @@
         <nav class="navbar">
             <a href="#random" class="navbar-brand"><img src="imagenes/logo-3.png" style="width: 265px; vertical-align: middle;"></a>
             <ul>
-              <li><a id="abc" href="#abc">A-Z / Z-A</a></li>
+              <li>
+                <a class="submenu-label" href="#">A-Z / Z-A</a>
+                <ul class="submenu">
+                  <li><a id="abc" href="abc" >A-Z</a></li>
+                  <li><a id="zyx" href="zyx">Z-A</a></li>
+                </ul>
+              </li>
+
               <li><a id="tipo" href="#tipo">TIPO</a></li>
               <li><a id="top10" href="#top10">TOP 10 DE APARICIÓN</a></li>
             </ul>
             <button class="navbar-toggler">
               <span></span>
             </button>
-          </nav>
+        </nav>
     </header>
     <main id="container" class="container">
         
@@ -30,7 +37,7 @@
                 <p class="textHome">Aquí encontrarás toda la información <br/>que debes conocer para ser el mejor <br/>¡Maestro Pokemon!</p>
             </div>
             <div class="row buttonHome">
-              <a href="" id="atrapalosYa" class="buttonAtrapalosYa">¡Atrápalos Ya!</a>
+              <button id="atrapalosYa" class="buttonAtrapalosYa">¡Atrápalos Ya!</button>
             </div>
             <div class="row">
                 <div class="download">
@@ -60,10 +67,10 @@
           </div>
         </section>
         
-        <section id="sectionPokemon" class="sectionOne absolute">
+        <section id="sectionPokemon" class="section-hide sectionOne absolute">
           <div id="seccion-card">
-        </div>
-      </section>
+          </div>
+        </section>
     </main>
     <script type="module" src="main.js"></script>
   </body>
