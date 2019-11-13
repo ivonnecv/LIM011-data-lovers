@@ -1,5 +1,9 @@
-import POKEMON from './data/pokemon/pokemon.js'
-import { traerDataPokemon, pokedata,  pokedata2 } from './data.js';
+
+import POKEMON from '../data/pokemon/pokemon.js';
+import { traerDataPokemon, pokedata,  pokedata2, pokedata3, pokedata4 } from './data.js';
+
+
+
 
 const dataModificada = traerDataPokemon(POKEMON) //ARRAY DE objetos con 3 caracteristicas;
 const Seccioncard = document.querySelector('#seccion-card');
@@ -34,8 +38,16 @@ function pokeLayout (data) {
 
 //console.log(Seccioncard);
 
+const home = document.querySelector('#sectionHome');
+const one = document.querySelector('#sectionPokemon');
 
-
+const atrapalos = document.querySelector('#atrapalosYa');
+  atrapalos.addEventListener('click', function(){
+ // console.log(home);
+    home.classList.add('section-hide');
+    one.classList.remove('section-hide');
+    pokeLayout(dataModificada);
+});
 
 abc.addEventListener('click', function(){
   //alert('ABC');
@@ -44,7 +56,6 @@ abc.addEventListener('click', function(){
 
 tipo.addEventListener('click', function(){
   //alert('tipo');
- 
   pokeLayout(pokedata);
 })
 
@@ -63,19 +74,12 @@ topten.addEventListener('click', function(){
 
 
 //funcion de comparacion con un operador ternario const pokedata = POKEMON.reverse((a,b) => (a.name > b.name ? 1:-1));
-//console.log(pokedata)
 
-
-
-
-
-//console.log(POKEMON);
 pokedata(POKEMON);
 pokedata2(POKEMON);
+//pokedata3('Normal', POKEMON);
+pokedata4(POKEMON);
 console.log(POKEMON);
-
-
-//console.log(POKEMON);
 
 //menu bar 
 const navbarToggler = document.querySelector(".navbar-toggler");
@@ -96,3 +100,4 @@ function navbarLinkClick() {
     navbarToggler.click();
   }
 }
+
