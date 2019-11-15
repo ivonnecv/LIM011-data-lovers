@@ -1,77 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <title>Data Lover s</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/214c83a375.js" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<title>Data Lover s</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css"/>
+	<script src="https://kit.fontawesome.com/214c83a375.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
-        <nav class="navbar">
-            <a href="#random" class="navbar-brand"><img src="logo-3.png" style="width: 265px; vertical-align: middle;"></a>
-            <ul>
-              <li>
-                <a class="submenu-label" href="#">A-Z / Z-A</a>
-                <ul class="submenu">
-                  <li><a id="abc" href="abc" >A-Z</a></li>
-                  <li><a id="zyx" href="zyx">Z-A</a></li>
-                </ul>
-              </li>
+	<header>
+		<nav class="navbar">
+			
+			<a href="#random" class="navbar-brand"><img src="imagenes/logo-3.png" style="width: 265px; vertical-align: middle;"></a>
+			
+			<!-- NAVIGATION -->
+			<ul>
+			 
+			  <li>
+				
+				<a class="submenu-label-name" href="#abc">A-Z / Z-A</a>
+				
+				<ul class="submenu-name">
+				  <li><a id="az" href="#">A-Z</a></li>
+				  <li><a id="za" href="#">Z-A</a></li>
+				</ul>
 
-              <li><a id="tipo" href="#tipo">TIPO</a></li>
-              <li><a id="top10" href="#top10">TOP 10 DE APARICIÓN</a></li>
-            </ul>
-            <button class="navbar-toggler">
-              <span></span>
-            </button>
-        </nav>
-    </header>
-    <main id="container" class="container">
-        
-        <section id="sectionHome" class="sectionCeroHome container-home">
-          <div class="col-1">
-            <div class="row infoHome">
-                <p class="textHome">Aquí encontrarás toda la información <br/>que debes conocer para ser el mejor <br/>¡Maestro Pokemon!</p>
-            </div>
-            <div class="row buttonHome">
-              <button id="atrapalosYa" class="buttonAtrapalosYa">¡Atrápalos Ya!</button>
-            </div>
-            <div class="row">
-                <div class="download">
-                  <h4>Descarga <br/>Pokemon GO!</h4>
-                  <div class="col buttonDownload">
-                      <img class="playStore" src="play-store.png" alt="">
-                      <img class="appStore" src="app-store-esp.png" alt="">
-                  </div>
-                </div>
-                <div class="shareFriends">
-                  <h4>Comparte <br/>con tus amigos</h4>
-                  <div class="col socialButton">
-                    <a href="https://pokemongolive.com/es/">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://pokemongolive.com/es/">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://pokemongolive.com/es/">
-                      <i class="fab fa-whatsapp"></i>
-                    </a>
-                  </div>
-                </div>
-            </div>
-          </div>
-          <div class="col-2">
-          </div>
-        </section>
-        
-        <section id="sectionPokemon" class="section-hide sectionOne absolute">
-          <div id="seccion-card">
-          </div>
-        </section>
-    </main>
-    <script type="module" src="main.js"></script>
+			  </li>
+
+  				<li>
+				
+					<a class="submenu-label-name" href="#abc">Tipos</a>
+					
+					<ul class="submenu-name">
+					  <li><a id="normal" href="#">Normal</a></li>
+					  <li><a id="lucha" href="#">Lucha</a></li>
+					  <li><a id="volador" href="#">Volador</a></li>
+					  <li><a id="veneno" href="#">Veneno</a></li>
+					  <!-- <li><a id="tierra" href="tierra">Tierra</a></li>
+					  <li><a id="roca" href="rocaa">Roca</a></li>
+					  <li><a id="bicho" href="bicho">Bicho</a></li>
+					  <li><a id="fantasma" href="fantasma">Fantasma</a></li>
+					  <li><a id="acero" href="acero">Acero</a></li>
+					  <li><a id="fuego" href=fuego>Fuego</a></li>
+					  <li><a id="agua" href="agua">Agua</a></li>
+					  <li><a id="planta" href="planta">Planta</a></li>
+					  <li><a id="electrico" href="electrico">Eléctrico</a></li>
+					  <li><a id="psiquico" href="psiquico">Psíquico</a></li>
+					  <li><a id="hielo" href="hielo">Hielo</a></li>
+					  <li><a id="dragon" href="dragon">Dragón</a></li>
+					  <li><a id="hada" href="hada">Hada</a></li>
+					  <li><a id="siniestro" href="siniestro">Siniestro</a></li> -->
+					</ul>
+
+				</li>			  
+
+<!--               <li>
+				<a class="submenu-label-tipo" href="#tipo">Tipo</a>
+				<ul class="submenu-tipo">
+				  <li><a id="normal" href="normal">Normal</a></li>
+				  <li><a id="lucha" href="lucha">Lucha</a></li>
+				  <li><a id="volador" href="volador">Volador</a></li>
+				  <li><a id="veneno" href="veneno">Veneno</a></li>
+				  <li><a id="tierra" href="tierra">Tierra</a></li>
+				  <li><a id="roca" href="rocaa">Roca</a></li>
+				  <li><a id="bicho" href="bicho">Bicho</a></li>
+				  <li><a id="fantasma" href="fantasma">Fantasma</a></li>
+				  <li><a id="acero" href="acero">Acero</a></li>
+				  <li><a id="fuego" href=fuego>Fuego</a></li>
+				  <li><a id="agua" href="agua">Agua</a></li>
+				  <li><a id="planta" href="planta">Planta</a></li>
+				  <li><a id="electrico" href="electrico">Eléctrico</a></li>
+				  <li><a id="psiquico" href="psiquico">Psíquico</a></li>
+				  <li><a id="hielo" href="hielo">Hielo</a></li>
+				  <li><a id="dragon" href="dragon">Dragón</a></li>
+				  <li><a id="hada" href="hada">Hada</a></li>
+				  <li><a id="siniestro" href="siniestro">Siniestro</a></li>
+				</ul>
+			  </li> -->
+
+			  <li>
+				<a id="top10" href="#top10">TOP 10 DE APARICIÓN</a>
+			  </li>
+			</ul>
+			<button class="navbar-toggler">
+			  <span></span>
+			</button>
+		</nav>
+	</header>
+	<main id="container" class="container">
+		
+		<section id="sectionHome" class="sectionCeroHome container-home">
+		  <div class="col-1">
+			<div class="row infoHome">
+				<p class="textHome">Aquí encontrarás toda la información <br/>que debes conocer para ser el mejor <br/>¡Maestro Pokemon!</p>
+			</div>
+			<div class="row buttonHome">
+			  <button id="atrapalosYa" class="buttonAtrapalosYa">¡Atrápalos Ya!</button>
+			</div>
+			<div class="row">
+				<div class="download">
+				  <h4>Descarga <br/>Pokemon GO!</h4>
+				  <div class="col buttonDownload">
+					  <img class="playStore" src="imagenes/play-store.png" alt="">
+					  <img class="appStore" src="imagenes/app-store.png" alt="">
+				  </div>
+				</div>
+				<div class="shareFriends">
+				  <h4>Comparte <br/>con tus amigos</h4>
+				  <div class="col socialButton">
+					<a href="https://pokemongolive.com/es/">
+					  <i class="fab fa-facebook-f"></i>
+					</a>
+					<a href="https://pokemongolive.com/es/">
+					  <i class="fab fa-instagram"></i>
+					</a>
+					<a href="https://pokemongolive.com/es/">
+					  <i class="fab fa-whatsapp"></i>
+					</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
+		  <div class="col-2">
+		  </div>
+		</section>
+		
+		<section id="sectionPokemon" class="section-hide sectionOne absolute">
+		  <div id="seccion-card">
+		  </div>
+		</section>
+	</main>
+	<script type="module" src="main.js"></script>
   </body>
 </html>
