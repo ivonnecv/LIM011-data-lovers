@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700i&display=swap');
 
+/*
  h4 {
     font-family: 'Roboto Mono', monospace; 
     letter-spacing: 1.5px; 
@@ -110,8 +111,8 @@
 
 
 .buttonHome {
-    /* margin-left: 130px;
-    margin-top: 5px; */   
+    margin-left: 130px;
+    margin-top: 5px;    
 }
 
 .download {
@@ -127,7 +128,7 @@
 }
 
 .buttonDownload {
-    /* display: flex; */
+    display: flex; 
     margin-top: 10px;
     width: 100%;
 }
@@ -173,6 +174,11 @@ img.appStore {
     height: 45px;
     margin: 0 auto;
 }
+*/
+
+.section-hide {
+  display: none;
+}
 
 /*Menu & Submenu*/
 
@@ -207,10 +213,38 @@ img.appStore {
   width: 100%;
 }
 
-/*.submenu-name {
+/*menu - submenu tipo*/ 
 
-}*/
+.submenu-tipo {
+  display: none;
+  background: #000;
+}
 
+.submenu-label-tipo {
+  padding: 0 50px;
+}
+
+.submenu-label-tipo:hover + .submenu-tipo {
+  display: flex;
+  flex-wrap: wrap;
+    padding: 0;
+}
+
+
+.submenu-tipo:hover {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+
+.submenu-tipo{
+  width: 100%;
+}
+
+.submenu-tipo li {
+  width: 100%;
+}
 
 
 

@@ -7,8 +7,8 @@ import { traerDataPokemon, pokedata,  pokedata2, pokedata3, pokedata4 } from './
 
 const dataModificada = traerDataPokemon(POKEMON) //ARRAY DE objetos con 3 caracteristicas;
 const Seccioncard = document.querySelector('#seccion-card');
-const pokeaz = pokedata(POKEMON);
-const pokeza = pokedata2(pokeaz);
+//const pokeaz = pokedata(POKEMON);
+//const pokeza = pokedata2(pokeaz);
 
 
 let az = document.querySelector('#az');
@@ -40,7 +40,7 @@ function pokeLayout (data) {
 
 
 //console.log(Seccioncard);
-
+/*
 const home = document.querySelector('#sectionHome');
 const one = document.querySelector('#sectionPokemon');
 
@@ -51,7 +51,7 @@ const atrapalos = document.querySelector('#atrapalosYa');
     one.classList.remove('section-hide');
     pokeLayout(dataModificada);
 });
-
+*/
 az.addEventListener('click', function(){
   //alert('ABC');
     home.classList.add('section-hide');
@@ -85,8 +85,11 @@ topten.addEventListener('click', function(){
 })
 
 
-
-
+console.log('data original', POKEMON);
+console.log('data ordenada az', pokedata(POKEMON));
+console.log('data ordanada za', pokedata2(POKEMON));
+console.log('data tipo', pokedata3('Grass',POKEMON));
+console.log('data ordanada avg', pokedata4(POKEMON));
 
 
 //Backtips y es la nueva forma de concatenar cadenas en es6 ${} interpolar variables

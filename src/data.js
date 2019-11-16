@@ -3,48 +3,49 @@
 export const traerDataPokemon = (array) => {
   const newArray = []; 
   for(let i = 0;  i<array.length; i++){
-   newArray.push({id: array[i].id, name: array[i].name, img:array[i].img, type: array[i].type, avg_spawns: array[i].avg_spawns});
+   newArray.push({id: array[i].id, name: array[i].name, img: array[i].img, type: array[i].type, avg_spawns: array[i].avg_spawns});
   }
   return newArray;
 }
 
-export const pokedata = (POKEMON) => {
-  /*
+export const pokedata = (array) => {
+ 
+   const newArray = [];
+   for (let i=0; i<array.length; i++){
+    newArray.push(array[i])
+   }
+  newArray.sort((a,b) => {
+    if (a.name < b.name){
+      return -1;  
+    } 
+    if (a.name > b.name){
+      return 1;
+    }
+    return 0;
+  });
+  return newArray;
+   /*
  POKEMON.sort((a,b) => (a.name > b.name ? 1:-1));
   return POKEMON;
   */
-  POKEMON.sort((a,b) => {
-    
-    if (a.name < b.name){
-      return -1;  
-    } 
-    
-    if (a.name > b.name){
-      return 1;
-    }
-    
-    return 0;
-  });
-
-  // traerDataPokemon(POKEMON);
-  // console.log(POKEMON);
-  return POKEMON;
-
 }
 
-export const pokedata2 = (POKEMON) => {
+export const pokedata2 = (array) => {
 
-  POKEMON.reverse((a,b) => {
+  const newArray = [];
+   for (let i=0; i<array.length; i++){
+    newArray.push(array[i])
+   }
+  newArray.sort((a,b) => {
     if (a.name < b.name){
-      return -1;  
+      return 1;  
     } 
     if (a.name > b.name){
-      return 1;
+      return -1;
     }
     return 0;
   });
-  return POKEMON;
-  // console.log(pokedata2);
+  return newArray;
 }
 
 export const pokedata3 = (tipo, POKEMON) => {
@@ -56,16 +57,35 @@ export const pokedata3 = (tipo, POKEMON) => {
       nuevoArray.push(POKEMON[i]);
     }
   }
-  console.log(nuevoArray);
+  //console.log(nuevoArray);
   return nuevoArray; 
 }
 
-export const pokedata4 = (POKEMON) => {
+export const pokedata4 = (array) => {
 
   
-    for (let i=0; i<11; i++) {
-      POKEMON.sort((a,b) => (b.avg_spawns > a.avg_spawns ? 1:-1));
+  let newArray = [];
+  
+   for (let i=0; i<array.length; i++) {
+    newArray.push(array[i])
+   }  
+    
+    newArray.sort((a,b) => (b.avg_spawns > a.avg_spawns ? 1:-1));
+    let newArrayTwo = [];
+    
+    for (let j=0; j<11; j++) {
+       newArrayTwo.push(newArray[j]);
     }
+        
+
+  
+
+  
+
+  
+    
+    
+    
     /*
     //POKEMON.sort((a,b) => {
     //console.log(b.avg_spawns + ' ' + b.name);
@@ -79,8 +99,17 @@ export const pokedata4 = (POKEMON) => {
 
     return 0;
   });
-  */
-  console.log(pokedata4);
+  
+    const newArray = [];
+      for (let i=0; i<array.length; i++){
+        newArray.push(array[i]);
+      }
+      newArray.sort((a,b) => (b.avg_spawns > a.avg_spawns ? 1:-1));
+        for (let j=0; j<10; j++){
+
+        }
+*/
+  return newArrayTwo;
 }
  
   
