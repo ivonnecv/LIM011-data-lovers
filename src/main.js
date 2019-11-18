@@ -60,10 +60,6 @@ za.addEventListener('click', function(){
   pokeLayout(pokeza);
 })
 
-//tipo.addEventListener('click', function(){
-  
-  
-//})
 
 top10.addEventListener('click', function(){
   let elemTop10 = document.querySelector('.card');
@@ -105,16 +101,21 @@ function navbarLinkClick() {
 
 
 
-let btn_agua = document.querySelector('#agua');
+let submenu = document.querySelector('#submenu');
 
-btn_agua.addEventListener('click', function(){
+
+submenu.addEventListener('click', function(event){
 
   let elemTp = document.querySelector('.card');
   elemTp.parentNode.removeChild(elemTp);
 //
-  let get_attr = btn_agua.getAttribute('data-type');
+  let get_attr = event.target.getAttribute('data-type');
+
+  // alert(get_attr);
 
   pokeLayout(pokedata3(get_attr,POKEMON));
 
 });
+
+
 
