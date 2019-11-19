@@ -1,30 +1,28 @@
 
 import POKEMON from '../data/pokemon/pokemon.js';
-import { traerDataPokemon, pokedata,  pokedata2, pokedata3, pokedata4 } from './data.js';
+import {
+  traerDataPokemon, pokedata, pokedata2, pokedata3, pokedata4,
+} from './data.js';
 
 
-
-
-const dataModificada = traerDataPokemon(POKEMON) //ARRAY DE objetos con 3 caracteristicas;
+const dataModificada = traerDataPokemon(POKEMON); // ARRAY DE objetos con 3 caracteristicas;
 const Seccioncard = document.querySelector('#seccion-card');
 const pokeaz = pokedata(POKEMON);
 const pokeza = pokedata2(POKEMON);
 // const poketipo = pokedata3(POKEMON);
-const poketop10 = pokedata4(POKEMON); 
+const poketop10 = pokedata4(POKEMON);
 
+const az = document.querySelector('#az');
+const za = document.querySelector('#za');
+// const tipo = document.querySelector('#tipo');
+const top10 = document.querySelector('#top10');
 
+// INIT FUNCTION LAYOUT
 
-let az = document.querySelector('#az');
-let za = document.querySelector('#za');
-let tipo = document.querySelector('#tipo');
-let top10 = document.querySelector('#top10');
-
-//INIT FUNCTION LAYOUT
-
-function pokeLayout (data) {
+function pokeLayout(data) {
   let stringTemplate = '';
-  for(let i = 0; i < data.length; i++){
-      stringTemplate += `
+  for (let i = 0; i < data.length; i += 1) {
+    stringTemplate += `
                           <div id='poke${data[i].id}' class='card'>
                               <div class='card-items'> 
                                   <h2>${data[i].name}</h2>
@@ -33,89 +31,70 @@ function pokeLayout (data) {
                               </div>
                           </div>   
                           
-                      `
+                      `;
   }
-  //console.log(stringTemplate);
+  // console.log(stringTemplate);
   Seccioncard.innerHTML = stringTemplate;
-  //traerDataPokemon(POKEMON);
-
+  // traerDataPokemon(POKEMON);
 }
-//console.log(Seccioncard);
-
-
+// console.log(Seccioncard);
 pokeLayout(dataModificada);
 
-az.addEventListener('click', function(){
-  
-  let elemAz = document.querySelector('.card');
+az.addEventListener('click', () => {
+  const elemAz = document.querySelector('.card');
   elemAz.parentNode.removeChild(elemAz);
   pokeLayout(pokeaz);
-})
+});
 
-
-za.addEventListener('click', function(){
-  
-  let elemZa = document.querySelector('.card');
+za.addEventListener('click', () => {
+  const elemZa = document.querySelector('.card');
   elemZa.parentNode.removeChild(elemZa);
   pokeLayout(pokeza);
-})
+});
 
-
-top10.addEventListener('click', function(){
-  let elemTop10 = document.querySelector('.card');
+top10.addEventListener('click', () => {
+  const elemTop10 = document.querySelector('.card');
   elemTop10.parentNode.removeChild(elemTop10);
   pokeLayout(poketop10);
-})
+});
 
+const submenu = document.querySelector('#submenu');
+submenu.addEventListener('click', (event) => {
+  const elemTp = document.querySelector('.card');
+  elemTp.parentNode.removeChild(elemTp);
+  const getAttr = event.target.getAttribute('data-type');
+  pokeLayout(pokedata3(getAttr, POKEMON));
+});
 
+/*
 console.log('data original', POKEMON);
 console.log('data ordenada az', pokedata(POKEMON));
 console.log('data ordanada za', pokedata2(POKEMON));
 console.log('data tipo', pokedata3('Water',POKEMON));
 console.log('top 10 avg', pokedata4(POKEMON));
+*/
 
+// menu bar
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarMenu = document.querySelector('.navbar ul');
+const navbarLinks = document.querySelectorAll('.navbar a');
 
-//Backtips y es la nueva forma de concatenar cadenas en es6 ${} interpolar variables
-
-//funcion de comparacion con un operador ternario const pokedata = POKEMON.reverse((a,b) => (a.name > b.name ? 1:-1));
-
-//menu bar 
-const navbarToggler = document.querySelector(".navbar-toggler");
-const navbarMenu = document.querySelector(".navbar ul");
-const navbarLinks = document.querySelectorAll(".navbar a");
-
-navbarToggler.addEventListener("click", navbarTogglerClick);
-
+navbarToggler.addEventListener('click', () => {
+  navbarToggler.classList.toggle('open-navbar-toggler');
+  navbarMenu.classList.toggle('open');
+});
+/*
 function navbarTogglerClick() {
-  navbarToggler.classList.toggle("open-navbar-toggler");
-  navbarMenu.classList.toggle("open");
+  navbarToggler.classList.toggle('open-navbar-toggler');
+  navbarMenu.classList.toggle('open');
 }
+*/
 
-navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
+// eslint-disable-next-line no-use-before-define
+navbarLinks.forEach((elem) => elem.addEventListener('click', navbarLinkClick));
 
 function navbarLinkClick() {
-  if(navbarMenu.classList.contains("open")) {
+  if (navbarMenu.classList.contains('open')) {
     navbarToggler.click();
   }
 }
-
-
-
-let submenu = document.querySelector('#submenu');
-
-
-submenu.addEventListener('click', function(event){
-
-  let elemTp = document.querySelector('.card');
-  elemTp.parentNode.removeChild(elemTp);
-//
-  let get_attr = event.target.getAttribute('data-type');
-
-  // alert(get_attr);
-
-  pokeLayout(pokedata3(get_attr,POKEMON));
-
-});
-
-
-
