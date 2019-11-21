@@ -1,16 +1,16 @@
 
 import POKEMON from '../data/pokemon/pokemon.js';
 import {
-  traerDataPokemon, pokedata, pokedata2, pokedata3, pokedata4,
+  traerDataPokemon, orderAz, orderZa, pokeType, orderTopTenAvg,
 } from './data.js';
 
 
 const dataModificada = traerDataPokemon(POKEMON); // ARRAY DE objetos con 3 caracteristicas;
-const Seccioncard = document.querySelector('#seccion-card');
-const pokeaz = pokedata(POKEMON);
-const pokeza = pokedata2(POKEMON);
-// const poketipo = pokedata3(POKEMON);
-const poketop10 = pokedata4(POKEMON);
+const seccionCard = document.querySelector('#seccion-card');
+const pokeaz = orderAz(POKEMON);
+const pokeza = orderZa(POKEMON);
+// const poketipo = pokeType(POKEMON);
+const poketop10 = orderTopTenAvg(POKEMON);
 
 const az = document.querySelector('#az');
 const za = document.querySelector('#za');
@@ -34,7 +34,7 @@ function pokeLayout(data) {
                       `;
   }
   // console.log(stringTemplate);
-  Seccioncard.innerHTML = stringTemplate;
+  seccionCard.innerHTML = stringTemplate;
   // traerDataPokemon(POKEMON);
 }
 // console.log(Seccioncard);
@@ -63,15 +63,15 @@ submenu.addEventListener('click', (event) => {
   const elemTp = document.querySelector('.card');
   elemTp.parentNode.removeChild(elemTp);
   const getAttr = event.target.getAttribute('data-type');
-  pokeLayout(pokedata3(getAttr, POKEMON));
+  pokeLayout(pokeType(getAttr, POKEMON));
 });
 
 /*
 console.log('data original', POKEMON);
-console.log('data ordenada az', pokedata(POKEMON));
-console.log('data ordanada za', pokedata2(POKEMON));
-console.log('data tipo', pokedata3('Water',POKEMON));
-console.log('top 10 avg', pokedata4(POKEMON));
+console.log('data ordenada az', orderAz(POKEMON));
+console.log('data ordanada za', orderZa(POKEMON));
+console.log('data tipo', pokeType('Water',POKEMON));
+console.log('top 10 avg', orderTopTenAvg(POKEMON));
 */
 
 // menu bar

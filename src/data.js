@@ -11,7 +11,7 @@ export const traerDataPokemon = (array) => {
   return newArray;
 };
 
-export const pokedata = (array) => {
+export const orderAz = (array) => {
   const newArray = [];
   for (let i = 0; i < array.length; i += 1) {
     newArray.push(array[i]);
@@ -32,7 +32,7 @@ export const pokedata = (array) => {
   */
 };
 
-export const pokedata2 = (array) => {
+export const orderZa = (array) => {
   const newArray = [];
   for (let i = 0; i < array.length; i += 1) {
     newArray.push(array[i]);
@@ -49,7 +49,7 @@ export const pokedata2 = (array) => {
   return newArray;
 };
 
-export const pokedata3 = (tipo, array) => {
+export const pokeType = (tipo, array) => {
   const nuevoArray = [];
   for (let i = 0; i < array.length; i += 1) {
     const arrTipos = array[i].type;
@@ -60,7 +60,7 @@ export const pokedata3 = (tipo, array) => {
   return nuevoArray;
 };
 
-export const pokedata4 = (array) => {
+export const orderTopTenAvg = (array) => {
   const newArray = [];
 
   for (let i = 0; i < array.length; i += 1) {

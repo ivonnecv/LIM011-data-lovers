@@ -1,7 +1,7 @@
 /* eslint-disable no-dupe-keys */
 // importamos la función `example`
 import {
-  traerDataPokemon, pokedata, pokedata2, pokedata3,
+  traerDataPokemon, orderAz, orderZa, pokeType, orderTopTenAvg,
 } from '../src/data';
 
 const input = [{
@@ -151,11 +151,41 @@ const output2 = [
   { name: 'Charmander' },
   { name: 'Bulbasaur' },
 ];
-const output3 = [{
+/* const output3 = [{
   type: ['Grass', 'Poison'],
   type: ['Grass', 'Poison'],
   type: ['Grass', 'Poison'],
-}];
+}]; */
+
+const input2 = [
+  { avg_spawns: 69 },
+  // { spawn_chance: 0.042 },
+  { avg_spawns: 1.7 },
+  { avg_spawns: 25.3 },
+  { avg_spawns: 1.2 },
+  // { avg_spawns: 0.31 },
+  { avg_spawns: 58 },
+  { avg_spawns: 3.4 },
+  { avg_spawns: 0.67 },
+  { avg_spawns: 303.2 },
+  { avg_spawns: 18.7 },
+  { avg_spawns: 2.2 },
+];
+
+const output3 = [
+  { avg_spawns: 303.2 },
+  { avg_spawns: 69 },
+  { avg_spawns: 58 },
+  { avg_spawns: 25.3 },
+  { avg_spawns: 18.7 },
+  { avg_spawns: 3.4 },
+  { avg_spawns: 2.2 },
+  { avg_spawns: 1.7 },
+  { avg_spawns: 1.2 },
+  { avg_spawns: 0.67 },
+  // { avg_spawns: 0.31 },
+  // { spawn_chance: 0.042 },
+];
 
 // Data extraída
 describe('traerDataPokemon', () => {
@@ -168,32 +198,43 @@ describe('traerDataPokemon', () => {
   });
 });
 // Orden AZ
-describe('pokedata', () => {
+describe('orderAz', () => {
   it('debería ser una función', () => {
-    expect(typeof pokedata).toBe('function');
+    expect(typeof orderAz).toBe('function');
   });
 
   it('debería ordenar los nombres de pokemones de A a Z', () => {
-    expect(pokedata(input1)).toStrictEqual(output1);
+    expect(orderAz(input1)).toStrictEqual(output1);
   });
 });
 // Orden ZA
-describe('pokedata2', () => {
+describe('orderZa', () => {
   it('debería ser una función', () => {
-    expect(typeof pokedata2).toBe('function');
+    expect(typeof orderZa).toBe('function');
   });
 
   it('debería ordenar los nombres de pokemones de Z a A', () => {
-    expect(pokedata2(input1)).toStrictEqual(output2);
+    expect(orderZa(input1)).toStrictEqual(output2);
   });
 });
 // Por tipo
-describe('pokedata3', () => {
+describe('pokeType', () => {
   it('debería ser una función', () => {
-    expect(typeof pokedata3).toBe('function');
+    expect(typeof pokeType).toBe('function');
   });
 
   it('debería filtrar los pokemones por tipo', () => {
-    expect(pokedata3(input)).toStrictEqual(output3);
+    expect(pokeType('Grass', input)[0].type).toEqual(['Grass', 'Poison']);
   });
 });
+// Top 10 avg
+describe('orderTopTenAvg', () => {
+  it('debería ser una función', () => {
+    expect(typeof orderTopTenAvg).toBe('function');
+  });
+
+  it('debería ordenar de mayor a menor los primeros avg_spawns', () => {
+    expect(orderTopTenAvg(input2)).toEqual(output3);
+  });
+});
+
