@@ -111,6 +111,22 @@ const output = [{
     'Poison',
   ],
   avg_spawns: 69,
+  candy_count: 25,
+  num: '001',
+  weaknesses: [
+    'Fire',
+    'Ice',
+    'Flying',
+    'Psychic',
+  ],
+  next_evolution: [{
+    num: '002',
+    name: 'Ivysaur',
+  }, {
+    num: '003',
+    name: 'Venusaur',
+  }],
+
 }, {
   id: 2,
   name: 'Ivysaur',
@@ -120,6 +136,22 @@ const output = [{
     'Poison',
   ],
   avg_spawns: 4.2,
+  candy_count: 100,
+  num: '002',
+  weaknesses: [
+    'Fire',
+    'Ice',
+    'Flying',
+    'Psychic',
+  ],
+  prev_evolution: [{
+    num: '001',
+    name: 'Bulbasaur',
+  }],
+  next_evolution: [{
+    num: '003',
+    name: 'Venusaur',
+  }],
 }, {
   id: 3,
   name: 'Venusaur',
@@ -129,6 +161,20 @@ const output = [{
     'Poison',
   ],
   avg_spawns: 1.7,
+  num: '003',
+  weaknesses: [
+    'Fire',
+    'Ice',
+    'Flying',
+    'Psychic',
+  ],
+  prev_evolution: [{
+    num: '001',
+    name: 'Bulbasaur',
+  }, {
+    num: '002',
+    name: 'Ivysaur',
+  }],
 }];
 
 const input1 = [
@@ -194,7 +240,7 @@ describe('traerDataPokemon', () => {
   });
 
   it('debería pintar todos los pokemones', () => {
-    expect(traerDataPokemon(input)).toStrictEqual(output);
+    expect(traerDataPokemon(input)).toEqual(output);
   });
 });
 // Orden AZ
@@ -237,4 +283,3 @@ describe('orderTopTenAvg', () => {
     expect(orderTopTenAvg(input2)).toEqual(output3);
   });
 });
-

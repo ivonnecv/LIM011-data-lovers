@@ -1,21 +1,26 @@
 
 import POKEMON from '../data/pokemon/pokemon.js';
 import {
-  traerDataPokemon, orderAz, orderZa, pokeType, orderTopTenAvg,
+  traerDataPokemon, orderAz, orderZa, filterType, orderTopTenAvg, filterWeaknesses,
 } from './data.js';
-
 
 const dataModificada = traerDataPokemon(POKEMON); // ARRAY DE objetos con 3 caracteristicas;
 const seccionCard = document.querySelector('#seccion-card');
-const pokeaz = orderAz(POKEMON);
-const pokeza = orderZa(POKEMON);
-// const poketipo = pokeType(POKEMON);
-const poketop10 = orderTopTenAvg(POKEMON);
+const pokeaz = orderAz(dataModificada);
+const pokeza = orderZa(dataModificada);
+// const poketipo = filterType(POKEMON);
+const poketop10 = orderTopTenAvg(dataModificada);
 
 const az = document.querySelector('#az');
 const za = document.querySelector('#za');
 // const tipo = document.querySelector('#tipo');
 const top10 = document.querySelector('#top10');
+
+// clear card
+function clearCard() {
+  const element = document.querySelector('.card');
+  element.parentNode.removeChild(element);
+}
 
 // INIT FUNCTION LAYOUT
 
@@ -33,44 +38,40 @@ function pokeLayout(data) {
                           
                       `;
   }
-  // console.log(stringTemplate);
+
   seccionCard.innerHTML = stringTemplate;
-  // traerDataPokemon(POKEMON);
 }
 // console.log(Seccioncard);
 pokeLayout(dataModificada);
 
 az.addEventListener('click', () => {
-  const elemAz = document.querySelector('.card');
-  elemAz.parentNode.removeChild(elemAz);
+  clearCard();
   pokeLayout(pokeaz);
 });
 
 za.addEventListener('click', () => {
-  const elemZa = document.querySelector('.card');
-  elemZa.parentNode.removeChild(elemZa);
+  clearCard();
   pokeLayout(pokeza);
 });
 
 top10.addEventListener('click', () => {
-  const elemTop10 = document.querySelector('.card');
-  elemTop10.parentNode.removeChild(elemTop10);
+  clearCard();
   pokeLayout(poketop10);
 });
 
+// traer elemento actual donde ocurre el evento
 const submenu = document.querySelector('#submenu');
 submenu.addEventListener('click', (event) => {
-  const elemTp = document.querySelector('.card');
-  elemTp.parentNode.removeChild(elemTp);
+  clearCard();
   const getAttr = event.target.getAttribute('data-type');
-  pokeLayout(pokeType(getAttr, POKEMON));
+  pokeLayout(filterType(getAttr, dataModificada));
 });
 
 /*
 console.log('data original', POKEMON);
 console.log('data ordenada az', orderAz(POKEMON));
 console.log('data ordanada za', orderZa(POKEMON));
-console.log('data tipo', pokeType('Water',POKEMON));
+console.log('data tipo', filterType('Water',POKEMON));
 console.log('top 10 avg', orderTopTenAvg(POKEMON));
 */
 
@@ -83,18 +84,9 @@ navbarToggler.addEventListener('click', () => {
   navbarToggler.classList.toggle('open-navbar-toggler');
   navbarMenu.classList.toggle('open');
 });
-/*
-function navbarTogglerClick() {
-  navbarToggler.classList.toggle('open-navbar-toggler');
-  navbarMenu.classList.toggle('open');
-}
-*/
 
-// eslint-disable-next-line no-use-before-define
-navbarLinks.forEach((elem) => elem.addEventListener('click', navbarLinkClick));
-
-function navbarLinkClick() {
+navbarLinks.forEach((elem) => elem.addEventListener('click', () => {
   if (navbarMenu.classList.contains('open')) {
     navbarToggler.click();
   }
-}
+}));
