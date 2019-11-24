@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700i&display=swap');
 
+
+body {
+    margin: 0 !important;
+}
+
 .sectionOne {
   margin-top: 120px;
 }
@@ -8,11 +13,11 @@
   display: none;
 }
 
-/*Menu & Submenu*/
+/*menu & submenu name*/
 
 .submenu-name {
   display: none;
-  background: #000;
+  background: #e74c3c;
 }
 
 .submenu-label-name {
@@ -45,7 +50,7 @@
 
 .submenu-tipo {
   display: none;
-  background: #000;
+  background: #e74c3c;
 }
 
 .submenu-label-tipo {
@@ -74,7 +79,38 @@
   width: 100%;
 }
 
+/*menu - submenu debilidad*/
 
+.submenu-debilidad {
+  display: none;
+  background: #e74c3c;
+}
+
+.submenu-label-debilidad {
+  padding: 0 50px;
+}
+
+.submenu-label-debilidad:hover + .submenu-debilidad {
+  display: flex;
+  flex-wrap: wrap;
+    padding: 0;
+}
+
+
+.submenu-debilidad:hover {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+
+.submenu-debilidad{
+  width: 100%;
+}
+
+.submenu-debilidad li {
+  width: 100%;
+}
 
 /*Card Pokemon*/
 
@@ -98,12 +134,16 @@
     }
     
     h2 {
-        color: peru;
+        color: #22a6b3;
         font-size: 1em;
     }
-    
+
+    h3 {
+      color: 
+    }
     .buttonStyle {
-        margin-block-end: 15%;
+        margin-block-end: 8%;
+        margin-top: 5%;
         width: 55%;
         font-family: 'Roboto Slab', serif;
         font-size: 14px;
@@ -116,12 +156,10 @@
     }
     
     .verPokemon {
+        
         margin-block-end: 3%;
         display: block;
         margin: 0 auto;
-        
-    
-        
     }
     
     @media only screen and (min-width: 767px)  {
@@ -139,8 +177,6 @@
     
         .container {
           width: 100%;
-          
-      
         }
     
         .card {
@@ -156,7 +192,7 @@
         color: #333;
       }*/
       .navbar {
-        background-color: #000;
+        background-color:#e74c3c;
         color: #fff;
         border-bottom: 1px solid rgba(255,255,255,0.2);
         width: 100%;
@@ -172,6 +208,7 @@
       .navbar a {
         text-decoration: none;
         color: #fff;
+        font-weight: bold;
       }
       .navbar a.navbar-brand {
         float: left;
@@ -292,3 +329,53 @@
           /* transform: translateY(-3px) scale(0.75) rotate(-45deg); */
         }
       }
+
+
+
+/*MODAL CSS*/
+
+.modal-hide {
+  display: none;
+  
+}
+
+.modal-show {
+  display: block; 
+  
+}
+
+.modal-container {
+  background-color: rgba(68, 68, 68, 0.63);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.modal-content {
+  /*max-width para desktop 700 y para mobile 300*/
+  max-width: 700px;
+  margin: 0 auto;
+  margin: 10% auto;
+  background: #fff;
+}
+
+.modal-body {
+  padding: 25px;
+  text-align: center;
+  position: relative;
+  display: flex;
+}
+
+.modal-col {
+  width: 50%;
+  border: solid red 1px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}

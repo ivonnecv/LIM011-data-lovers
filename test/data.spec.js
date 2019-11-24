@@ -1,7 +1,7 @@
 /* eslint-disable no-dupe-keys */
 // importamos la función `example`
 import {
-  traerDataPokemon, orderAz, orderZa, pokeType, orderTopTenAvg,
+  traerDataPokemon, orderAz, orderZa, filterType, orderTopTenAvg, filterWeaknesses,
 } from '../src/data';
 
 const input = [{
@@ -264,13 +264,13 @@ describe('orderZa', () => {
   });
 });
 // Por tipo
-describe('pokeType', () => {
+describe('filterType', () => {
   it('debería ser una función', () => {
-    expect(typeof pokeType).toBe('function');
+    expect(typeof filterType).toBe('function');
   });
 
   it('debería filtrar los pokemones por tipo', () => {
-    expect(pokeType('Grass', input)[0].type).toEqual(['Grass', 'Poison']);
+    expect(filterType('Grass', input)[0].type).toEqual(['Grass', 'Poison']);
   });
 });
 // Top 10 avg
@@ -281,5 +281,15 @@ describe('orderTopTenAvg', () => {
 
   it('debería ordenar de mayor a menor los primeros avg_spawns', () => {
     expect(orderTopTenAvg(input2)).toEqual(output3);
+  });
+});
+// Por debilidad
+describe('filterWeaknesses', () => {
+  it('debería ser una función', () => {
+    expect(typeof filterWeaknesses).toBe('function');
+  });
+
+  it('debería filtrar los pokemones por debilidad', () => {
+    expect(filterWeaknesses('Fire', input)[0].weaknesses).toEqual(['Fire', 'Ice', 'Flying', 'Psychic']);
   });
 });

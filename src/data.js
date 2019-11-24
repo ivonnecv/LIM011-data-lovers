@@ -104,6 +104,6 @@ export const filterWeaknesses = (debilidad, array) => {
   for (let i = 0; i < array.length; i += 1) {
     newArray.push(array[i]);
   }
-  const filtWeaknesses = newArray.filter((elem) => (elem.type.indexOf(debilidad) !== -1));
+  const filtWeaknesses = newArray.filter((elem) => (elem.weaknesses.indexOf(debilidad) !== -1));
   return filtWeaknesses;
 };

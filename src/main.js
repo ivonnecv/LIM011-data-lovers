@@ -31,8 +31,9 @@ function pokeLayout(data) {
                           <div id='poke${data[i].id}' class='card'>
                               <div class='card-items'> 
                                   <h2>${data[i].name}</h2>
+                                  <h3>${data[i].num}</h3>
                                   <img class="verPokemon" src="${data[i].img}"/>
-                                  <button id="verPokemon_${data[i].id}" class="buttonStyle">Ver</button>
+                                  <button id="verPokemon_${data[i].id}" data-id="${data[i].id}" class="buttonStyle">Ver</button>
                               </div>
                           </div>   
                           
@@ -60,11 +61,18 @@ top10.addEventListener('click', () => {
 });
 
 // traer elemento actual donde ocurre el evento
-const submenu = document.querySelector('#submenu');
-submenu.addEventListener('click', (event) => {
+const submenuType = document.querySelector('#submenuType');
+submenuType.addEventListener('click', (event) => {
   clearCard();
   const getAttr = event.target.getAttribute('data-type');
   pokeLayout(filterType(getAttr, dataModificada));
+});
+
+const submenuWeaknesses = document.querySelector('#submenuWeaknesses');
+submenuWeaknesses.addEventListener('click', (event) => {
+  clearCard();
+  const getAttr = event.target.getAttribute('data-debilidad');
+  pokeLayout(filterWeaknesses(getAttr, dataModificada));
 });
 
 /*
@@ -90,3 +98,64 @@ navbarLinks.forEach((elem) => elem.addEventListener('click', () => {
     navbarToggler.click();
   }
 }));
+
+
+
+/* MODAL  */
+
+let button_modal = document.querySelector('#verPokemon_1');
+let modal_container = document.querySelector('.modal-container');
+let modal_close = document.querySelector('.modal-close');
+
+
+let pokemodal_name = document.querySelector('#pokemodal-name');
+let pokemodal_num = document.querySelector('#pokemodal-num');
+let pokemodal_candys = document.querySelector('#pokemodal-candys');
+let pokemodal_img = document.querySelector('#pokemodal-img');
+
+
+button_modal.addEventListener('click', (event) => {
+
+//  alert('Modal 1');
+
+  modal_container.classList.remove('modal-hide');
+  modal_container.classList.add('modal-show');
+
+  /*Insert data*/
+
+   let get_data_id = event.target.getAttribute('data-id');
+    
+   //console.log(dataModificada);
+
+   for (let i = 0; i < dataModificada.length; i += 1 ) {
+      if (dataModificada[i].id == parseInt(get_data_id)) {
+        
+        let data_name = dataModificada[i].name;
+        let data_num = dataModificada[i].num;
+        let data_candy_count = dataModificada[i].candy_count;
+        
+        let data_img = dataModificada[i].img;
+
+        pokemodal_name.innerHTML = data_name;
+        pokemodal_num.innerHTML = data_num;
+        pokemodal_candys.innerHTML = data_candy_count;
+
+        pokemodal_img.setAttribute('src', data_img);
+        
+        
+        //if (dataModificada[i].prev_evolution == NULL) {
+          
+        //}
+
+      }
+   }
+
+  
+
+});
+
+modal_close.addEventListener('click', () => {
+  modal_container.classList.remove('modal-show');
+  modal_container.classList.add('modal-hide');
+});
+
