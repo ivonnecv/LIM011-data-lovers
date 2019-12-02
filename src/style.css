@@ -40,6 +40,12 @@ body {
   width: 100%;
 }
 
+.navmenu {
+  padding: 0vmax;
+  margin: 0 auto; 
+  
+}
+
 /*Card Pokemon*/
 
     #seccion-card {
